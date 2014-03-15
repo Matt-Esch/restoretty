@@ -1,0 +1,39 @@
+{
+  "name": "restoretty",
+  "version": "0.1.0",
+  "description": "Turn off TTY raw mode",
+  "keywords": [],
+  "author": "Matt-Esch <matt@mattesch.info>",
+  "repository": "git://github.com/Matt-Esch/restoretty.git",
+  "main": "index",
+  "homepage": "https://github.com/Matt-Esch/restoretty",
+  "contributors": [
+    {
+      "name": "Matt-Esch"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Matt-Esch/restoretty/issues",
+    "email": "matt@mattesch.info"
+  },
+  "dependencies": {
+    "process": "~0.6.0"
+  },
+  "devDependencies": {
+    "tape": "~1.0.2"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Matt-Esch/restoretty/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "test": "node ./test/index.js",
+    "start": "node ./index.js",
+    "watch": "nodemon -w ./index.js index.js",
+    "travis-test": "istanbul cover ./test/index.js && ((cat coverage/lcov.info | coveralls) || exit 0)",
+    "cover": "istanbul cover --report none --print detail ./test/index.js",
+    "view-cover": "istanbul report html && google-chrome ./coverage/index.html"
+  }
+}
